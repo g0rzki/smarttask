@@ -1,6 +1,6 @@
-# Dokumentacja projetu: **"SmartTask – Menedżer Zadań"**
+# Dokumentacja projektu: **"SmartTask – Menedżer Zadań"**
 
-## Zespoł projetowy:
+## Zespół projektowy:
 
 _Piotr Gorzkiewicz_ [@g0rzki](https://github.com/g0rzki)
 
@@ -12,7 +12,7 @@ SmartTask to webowa aplikacja do zarządzania zadaniami, umożliwiająca tworzen
 
 Aplikacja wspiera użytkownika w organizacji codziennych obowiązków dzięki przejrzystemu interfejsowi oraz podstawowym funkcjom analitycznym.
 
-## Zakres projektu opis funkcjonalności:
+## Zakres projektu i opis funkcjonalności:
 
 1. Rejestracja i logowanie – użytkownik może utworzyć konto, zalogować się oraz wylogować.
 
