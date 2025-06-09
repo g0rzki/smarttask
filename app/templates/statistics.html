@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Kontener główny statystyk -->
+<div class="max-w-3xl mx-auto p-6">
+
+    <!-- Nagłówek sekcji -->
+    <h2 class="text-3xl font-bold text-teal-700 mb-8 text-center">Statystyki zadań</h2>
+
+    <!-- Statystyki ogólne -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Liczba wszystkich zadań -->
+        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+            <span class="text-5xl font-bold text-teal-600">{{ total_tasks }}</span>
+            <span class="mt-2 text-gray-700">Wszystkich zadań</span>
+        </div>
+
+        <!-- Liczba ukończonych zadań -->
+        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+            <span class="text-5xl font-bold text-green-600">{{ completed_tasks }}</span>
+            <span class="mt-2 text-gray-700">Ukończonych zadań</span>
+        </div>
+
+        <!-- Liczba nieukończonych zadań -->
+        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+            <span class="text-5xl font-bold text-yellow-600">{{ pending_tasks }}</span>
+            <span class="mt-2 text-gray-700">Nieukończonych zadań</span>
+        </div>
+
+        <!-- Liczba zadań po terminie -->
+        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+            <span class="text-5xl font-bold text-gray-700">{{ overdue_tasks }}</span>
+            <span class="mt-2 text-gray-700">Zadań po terminie</span>
+        </div>
+
+    </div>
+
+    <!-- Statystyki według priorytetu -->
+    <h3 class="text-xl font-semibold text-teal-700 mt-10 mb-4">Zadania według priorytetu</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Liczba zadań z niskim priorytetem -->
+        <div class="bg-green-50 rounded-xl shadow p-4 flex flex-col items-center">
+            <span class="text-3xl font-bold text-green-700">{{ low_priority }}</span>
+            <span class="mt-1 text-gray-700">Niski priorytet</span>
+        </div>
+
+        <!-- Liczba zadań ze średnim priorytetem -->
+        <div class="bg-yellow-50 rounded-xl shadow p-4 flex flex-col items-center">
+            <span class="text-3xl font-bold text-yellow-700">{{ medium_priority }}</span>
+            <span class="mt-1 text-gray-700">Średni priorytet</span>
+        </div>
+
+        <!-- Liczba zadań z wysokim priorytetem -->
+        <div class="bg-red-50 rounded-xl shadow p-4 flex flex-col items-center">
+            <span class="text-3xl font-bold text-red-700">{{ high_priority }}</span>
+            <span class="mt-1 text-gray-700">Wysoki priorytet</span>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Kontener formularza zadania -->
+<div class="w-full max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+
+    <!-- Nagłówek formularza -->
+    <h2 class="text-3xl font-bold text-center text-teal-600 mb-8">{{ 'Edytuj' if task else 'Nowe' }} zadanie</h2>
+
+    <!-- Formularz zadania -->
+    <form method="post">
+
+        <!-- Pole: tytuł zadania -->
+        <div class="mb-6">
+            <label for="title" class="block mb-2 text-sm font-medium text-gray-700">Tytuł</label>
+            <input type="text" id="title" name="title" value="{{ task.title if task else '' }}" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition" required>
+        </div>
+
+        <!-- Pole: termin zadania -->
+        <div class="mb-6">
+            <label for="due_date" class="block mb-2 text-sm font-medium text-gray-700">Termin</label>
+            <input type="date" id="due_date" name="due_date" value="{{ task.due_date.strftime('%Y-%m-%d') if task else '' }}" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition" required>
+        </div>
+
+        <!-- Pole: priorytet zadania -->
+        <div class="mb-6">
+            <label for="priority" class="block mb-2 text-sm font-medium text-gray-700">Priorytet</label>
+            <select id="priority" name="priority" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition" required>
+                <option value="Low" {% if task and task.priority == 'Low' %}selected{% endif %}>Niski</option>
+                <option value="Medium" {% if task and task.priority == 'Medium' %}selected{% endif %}>Średni</option>
+                <option value="High" {% if task and task.priority == 'High' %}selected{% endif %}>Wysoki</option>
+            </select>
+        </div>
+
+        <!-- Pole: kategoria zadania -->
+        <div class="mb-6">
+            <label for="category" class="block mb-2 text-sm font-medium text-gray-700">Kategoria</label>
+            <input type="text" id="category" name="category" value="{{ task.category if task else '' }}" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition" required>
+        </div>
+
+        <!-- Przycisk zapisz -->
+        <div>
+            <button type="submit" class="w-full py-3 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">Zapisz</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
