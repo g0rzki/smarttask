@@ -1,5 +1,3 @@
-Programowanie w języku Python 
-
 # Dokumentacja projetu: **"SmartTask – Menedżer Zadań"**
 
 ## Zespoł projetowy:
